@@ -1,13 +1,34 @@
 <h1>Tasks</h1>
 
-<%= link_to "Create a new Task", tasks_new_path %>
 
-<% @tasks.each do |task| %>
-  <ul>
-  <i class="far fa-check-square"></i> <%= task.title  %>
-  <%= link_to "See",  task_path(task) %>
-  <%= link_to "Edit",  edit_path(task) %>
-  <%= link_to "Delete",  task_path(task), method: :delete%>
-  </ul>
-  
-<% end %>
+<div class="container-main">
+<a href="<%=tasks_new_path %>" class="btn btn-secondary" id="create-task">Create a new Task</a>
+  <% @tasks.each do |task| %>
+    <div class="tile-task">
+      <div class="tile-title">
+        <% if task.completed %>
+          <i class="far fa-check-square"></i> <%= task.title %>
+        <% else %>
+          <i class="far fa-square"></i> <%= task.title %>
+        <% end %>
+      </div>
+      <div class="options-task">
+        <div class="option">
+        <%= link_to task_path(task) do %>
+          <%= fa_icon "eye" %>
+        <% end %>
+        </div>
+        <div class="option">
+        <%= link_to edit_path(task) do %>
+          <%= fa_icon "pen" %>
+        <% end %>
+        </div>
+        <div class="option">
+        <%= link_to task_path(task), method: :delete do %>
+          <%= fa_icon "recycle" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
