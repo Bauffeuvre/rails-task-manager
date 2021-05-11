@@ -1,9 +1,13 @@
 <h1>Tasks</h1>
 
+<%= link_to "Create a new Task", tasks_new_path %>
+
 <% @tasks.each do |task| %>
   <ul>
   <i class="far fa-check-square"></i> <%= task.title  %>
-  <%= link_to "See this Task",  task_path(task) %>
+  <%= link_to "See",  task_path(task) %>
+  <%= link_to "Edit",  edit_path(task) %>
+  <%= link_to "Delete",  task_path(task), method: :delete%>
   </ul>
   
 <% end %>
