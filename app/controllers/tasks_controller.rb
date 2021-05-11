@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    get_task
   end
   
   def new
@@ -18,11 +18,11 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @task = Task.find(params[:id])
+    get_task
   end
   
   def update
-    @task = Task.find(params[:id])
+    get_task
     @task.update(params_tasks)  
     redirect_to tasks_path
   end
@@ -34,6 +34,11 @@ class TasksController < ApplicationController
   end
   
   private
+  
+  def get_task
+    @task = Task.find(params[:id])
+  end
+  
 
   def params_tasks
      params.require(:task).permit(:title, :details)
