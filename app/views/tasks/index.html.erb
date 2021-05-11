@@ -1,0 +1,9 @@
+<h1>Tasks</h1>
+
+<% @tasks.each do |task| %>
+  <ul>
+  <i class="far fa-check-square"></i> <%= task.title  %>
+  <%= link_to "See this Task",  task_path(task) %>
+  </ul>
+  
+<% end %>
