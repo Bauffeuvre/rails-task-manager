@@ -56,6 +56,31 @@ legend.col-form-label {
 }
 
 // Media Queries
+// Smallest devices
+@media (max-width: 576px) {
+  .tile-task {
+    border: solid 1px;
+    margin: 5px;
+    padding: 3px;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+  }
+
+  .form {
+    border: solid 1px;
+    margin: 5px auto;
+    padding: 20px;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+  }
+
+  #create-task {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 90%;
+  }
+}
 // Small devices
 @media (min-width: 576px) {
   .tile-task {
